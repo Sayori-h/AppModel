@@ -2,7 +2,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score, mean_squared_error
-import numpy as np
 
 # 设置中文字体
 plt.rcParams['font.family'] = 'Microsoft YaHei'

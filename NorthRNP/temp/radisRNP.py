@@ -1,7 +1,5 @@
 import math
-
 import matplotlib.pyplot as plt
-import numpy as np
 
 # 输入的坐标点和墨卡托投影转换函数
 R = 6378137  # 地球半径（墨卡托投影使用的常数）

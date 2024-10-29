@@ -2,7 +2,7 @@ import math
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from ILStools.constant import FIG_SIZE, SCATTER_COLOR, SCATTER_SIZE, SCATTER_ALPHA, SCATTER_LABEL, LINE_WIDTH, \
+from .constant import FIG_SIZE, SCATTER_COLOR, SCATTER_SIZE, SCATTER_ALPHA, SCATTER_LABEL, LINE_WIDTH, \
     LINE_COLORS, \
     LINE_LABELS, FONT_SIZE, TICK_LABEL_SIZE, OFFSET_TEXT_SIZE, LEGEND_FONT_SIZE, OFFSET_UP, OFFSET_DOWN, d, R
 

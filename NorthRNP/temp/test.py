@@ -1,5 +1,5 @@
 import numpy as np
-import ILStools.ILStools as tl
+import AppModel.ILStools as tl
 import matplotlib.pyplot as plt
 
 file_path = '../../doc/mktNorth.xlsx'

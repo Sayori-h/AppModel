@@ -1,5 +1,5 @@
 import pandas as pd
-import ILStools.ILStools as tl
+import AppModel.ILStools as tl
 
 # 文件路径
 file_path = '../doc/mktNorth.xlsx'
