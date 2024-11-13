@@ -101,6 +101,12 @@ def calculate_point_on_line(A, B, l):
     """
     # Vector from B to A
     BA = np.array(A) - np.array(B)
+    # 在 BA_unit 计算前确保 BA 向量的长度不为零
+    BA_length = np.linalg.norm(BA)
+    if BA_length != 0:
+        BA_unit = BA / BA_length
+    else:
+        BA_unit = np.zeros_like(BA)  # 当 BA 向量长度为零时，用零向量替代
     # Unit vector in the direction of BA
     BA_unit = BA / np.linalg.norm(BA)
     # Point at distance l from B towards A
@@ -127,6 +133,14 @@ def calculate_point_on_perpendicular(A, B, P, d=1):
 
     # Vector from A to B
     AB = B - A
+
+    # 在 AB_unit 计算前确保 AB 向量的长度不为零
+    AB_length = np.linalg.norm(AB)
+    if AB_length != 0:
+        AB_unit = AB / AB_length
+    else:
+        AB_unit = np.zeros_like(AB)  # 当 AB 向量长度为零时，用零向量替代
+
     # Unit vector in the direction of AB
     AB_unit = AB / np.linalg.norm(AB)
     # Perpendicular vector to AB
@@ -322,7 +336,7 @@ def plot_paths(x_values, y_values, p):
     fig, ax = plt.subplots(figsize=FIG_SIZE)  # 使用常量 FIG_SIZE
 
     # 绘制实际航迹的散点图，使用常量配置
-    ax.scatter(x_values, y_values, color=SCATTER_COLOR, s=SCATTER_SIZE, label=SCATTER_LABEL, alpha=SCATTER_ALPHA)
+    #ax.scatter(x_values, y_values, color=SCATTER_COLOR, s=SCATTER_SIZE, label=SCATTER_LABEL, alpha=SCATTER_ALPHA)
 
     # 绘制原始蓝色平滑航迹线
     plot_smoothed_path(ax, p, offset=0, color=LINE_COLORS['original'], label=LINE_LABELS['original'])
@@ -350,3 +364,35 @@ def plot_paths(x_values, y_values, p):
     # 显示图像
     plt.show()
 
+def plot_paths_line(x_values, y_values, p):
+    """
+    绘制平滑航迹线。
+
+    参数：
+    x_values (array-like): 实际航迹的X坐标。
+    y_values (array-like): 实际航迹的Y坐标。
+    p (numpy.ndarray): 墨卡托投影并排序后的坐标数组。
+    """
+
+    # 创建一个统一的绘图对象
+    fig, ax = plt.subplots(figsize=FIG_SIZE)  # 使用常量 FIG_SIZE
+
+    # 绘制原始蓝色平滑航迹线
+    plot_smoothed_path(ax, p, offset=0, color=LINE_COLORS['original'], label=LINE_LABELS['original'])
+
+    # 添加标题和标签，并使用常量设置字体大小
+    ax.set_xlabel('X/m', fontsize=FONT_SIZE)
+    ax.set_ylabel('Y/m', fontsize=FONT_SIZE)
+
+    # 调整坐标轴刻度字体大小
+    ax.tick_params(axis='both', which='major', labelsize=TICK_LABEL_SIZE)
+
+    # 调整偏移文本的字体大小
+    ax.xaxis.get_offset_text().set_fontsize(OFFSET_TEXT_SIZE)
+    ax.yaxis.get_offset_text().set_fontsize(OFFSET_TEXT_SIZE)
+
+    # 添加图例，并设置字体大小
+    ax.legend(fontsize=LEGEND_FONT_SIZE)
+
+    # 显示图像
+    plt.show()

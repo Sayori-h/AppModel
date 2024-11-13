@@ -14,4 +14,5 @@ coordinates = [
 p = tl.convert_coordinates(coordinates)
 
 # 调用绘图函数
-tl.plot_paths(x_values, y_values, p)
+#tl.plot_paths(x_values, y_values, p)
+tl.plot_paths_line(x_values, y_values, p)

@@ -18,12 +18,12 @@ LINE_COLORS = {
 }
 LINE_LABELS = {
     'original': '定义航迹',
-    'offset_up': '+0.95nm包络线',
-    'offset_down': '-0.95nm包络线'
+    'offset_up': '+1nm包络线',
+    'offset_down': '-1nm包络线'
 }
 
-OFFSET_UP = 1750
-OFFSET_DOWN = -1750
+OFFSET_UP = 1770
+OFFSET_DOWN = -1770
 
 # 字体大小
 FONT_SIZE = 18

@@ -453,7 +453,23 @@ Linear Regression Equation (Original Data): Y = 0.0000000004X + 0.0102928582
 ![original image](https://cdn.mathpix.com/snip/images/9UObF98mT2HjdL1KWjb7mw59kraiTJcGwvf8j9G4Cdw.original.fullsize.png)
 
 ![original image](https://cdn.mathpix.com/snip/images/RvLfrSuuj445nVn6ZOxg27VHEgmV6OhkHZMVfm8k8pU.original.fullsize.png)
+
 Linear Regression Equation (Original Data): Y = -0.0000012332X + -0.0160601881
 决定系数（R-squared）: 0.00213149
 均方误差（MSE）: 0.00997735
 
+## Pandoc的使用
+
+## 代码块
+```git
+git init                    //初始化
+git add file.doc            //加入指定文件，偷懒的话可以直接 git add .
+git commit -am "版本标识符"  //版本标号
+git wdiff                   //查看当前改动
+git log                     //查看历史版本
+git reset --hard vesion     //版本回退
+git status                  //查看当前数据
+pandoc -s file.docx -t markdown -o file.md 
+//pandoc强大之处，可直接进行文件转换；这里是将.docx转换为.md文件，在相应的工程目录下会多出一个markdown文件
+
+```
