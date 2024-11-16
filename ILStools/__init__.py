@@ -3,4 +3,7 @@ from .ILStools import convert_coordinates
 from .ILStools import plot_paths
 from .ILStools import plot_smoothed_path
 from .ILStools import latlon_to_mercator
-from .ILStools import plot_paths_line
+from .ILStools import convert_to_mercator_with_height
+from .ILStools import plot_3d_path
+from .ILStools import Splot_paths_scaled
+from .ILStools import Nplot_paths_scaled

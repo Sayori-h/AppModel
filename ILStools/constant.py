@@ -22,8 +22,8 @@ LINE_LABELS = {
     'offset_down': '-1nm包络线'
 }
 
-OFFSET_UP = 1770
-OFFSET_DOWN = -1770
+OFFSET_UP = 1470
+OFFSET_DOWN = -1470
 
 # 字体大小
 FONT_SIZE = 18
